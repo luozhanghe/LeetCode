@@ -41,9 +41,11 @@ class Solution(object):
             for i, group in enumerate(groups):
                 if group + v <= target:
                     groups[i] += v
-                    if search(groups): return True
+                    if search(groups):
+                        return True
                     groups[i] -= v
-                if not group: break
+                if not group:
+                    break
             nums.append(v)
             return False
 
