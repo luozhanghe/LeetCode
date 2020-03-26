@@ -24,14 +24,15 @@ class Solution:
         :rtype: List[int]
         """
         list1 = []
-        for j in nums:
-            length = len(nums) - 1
-            i = 1 + nums.index(j)
-            while i <= length:
-                tmp = j + nums[i]
+        length = len(nums)
+        # 从数组第一个元素开始遍历，找到数组其他值与其相加是否和target相等，相等则返回两个元素的下标
+        for j in range(length):
+            i = 1 + j
+            while i < length:
+                tmp = nums[j] + nums[i]
                 i = i + 1
                 if tmp == target:
-                    list1.append(nums.index(j))
+                    list1.append(j)
                     list1.append(i - 1)
                     return list1
 
